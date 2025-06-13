@@ -9,7 +9,9 @@ import Footer from './components/Footer';
 import DarkModeToggle from './components/DarkModeToggle';
 import Gateway2JapanMaintenance from './pages/Gateway2JapanMaintenance';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react";
 import './index.css';
+
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
             </>
           } />
         </Routes>
+        <Analytics />
       </div>
     </BrowserRouter>
   );

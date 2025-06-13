@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.0",
+    "@vercel/analytics": "^1.5.0",
     "autoprefixer": "^10.4.21",
     "cra-template-pwa": "2.0.0",
     "framer-motion": "^12.17.3",
