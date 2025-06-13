@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
-    year: '2023',
+    year: '2025',
     title: 'KSOS App Launch',
     desc: 'Launched KSOS with Rajasthan Police, impacting 35,000+ students.'
   },
   {
-    year: '2022',
+    year: '2024',
     title: 'Gateway 2 Japan',
     desc: 'Released language learning app for Indian learners.'
   },
   {
-    year: '2021',
+    year: '2024',
     title: 'Vindhya Realty Websites',
     desc: 'Delivered high-performance real estate web platforms.'
   },
