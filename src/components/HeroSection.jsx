@@ -99,11 +99,11 @@ const HeroSection = () => {
         {/* Twofoldtwins Avatars */}
         <div className="mt-12 w-full flex justify-center gap-12">
           <div className="flex flex-col items-center">
-            <img src="/khush_avatar.png" alt="Khush Avatar" className="w-28 h-28 rounded-full border-4 border-cyan-400 shadow-lg object-cover" />
+            <img src="https://i.ibb.co/Dgk5Cktn/Khush-avatar.png" alt="Khush Avatar" className="w-28 h-28 rounded-full border-4 border-cyan-400 shadow-lg object-cover" />
             <span className="mt-3 text-lg font-semibold text-cyan-200">Khush</span>
           </div>
           <div className="flex flex-col items-center">
-            <img src="/jay_avatar.png" alt="Jay Avatar" className="w-28 h-28 rounded-full border-4 border-cyan-400 shadow-lg object-cover" />
+            <img src="https://i.ibb.co/sJ2mz7SD/Jay-avatar.png" alt="Jay Avatar" className="w-28 h-28 rounded-full border-4 border-cyan-400 shadow-lg object-cover" />
             <span className="mt-3 text-lg font-semibold text-cyan-200">Jay</span>
           </div>
         </div>
