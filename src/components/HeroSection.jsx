@@ -97,16 +97,43 @@ const HeroSection = () => {
           </a>
         </div>
         {/* Twofoldtwins Avatars */}
-        <div className="mt-12 w-full flex justify-center gap-12">
-          <div className="flex flex-col items-center">
-            <img src="https://i.ibb.co/Dgk5Cktn/Khush-avatar.png" alt="Khush Avatar" className="w-28 h-28 rounded-full border-4 border-cyan-400 shadow-lg object-cover" />
-            <span className="mt-3 text-lg font-semibold text-cyan-200">Khush</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src="https://i.ibb.co/sJ2mz7SD/Jay-avatar.png" alt="Jay Avatar" className="w-28 h-28 rounded-full border-4 border-cyan-400 shadow-lg object-cover" />
-            <span className="mt-3 text-lg font-semibold text-cyan-200">Jay</span>
-          </div>
-        </div>
+       {/* Twofoldtwins Avatars */}
+<div className="mt-12 w-full flex justify-center gap-12">
+  {/* Khush Avatar Link */}
+  <a
+    href="https://www.linkedin.com/in/khushvardhanbhardwaj/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex flex-col items-center hover:scale-105 transition-transform duration-200"
+  >
+    <img
+      src="https://i.ibb.co/Dgk5Cktn/Khush-avatar.png"
+      alt="Khush Avatar"
+      className="w-28 h-28 rounded-full border-4 border-cyan-400 shadow-lg object-cover"
+    />
+    <span className="mt-3 text-lg font-semibold text-cyan-200">
+      Khush
+    </span>
+  </a>
+
+  {/* Jay Avatar Link */}
+  <a
+    href="https://www.linkedin.com/in/jayvardhanbhardwaj/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex flex-col items-center hover:scale-105 transition-transform duration-200"
+  >
+    <img
+      src="https://i.ibb.co/sJ2mz7SD/Jay-avatar.png"
+      alt="Jay Avatar"
+      className="w-28 h-28 rounded-full border-4 border-cyan-400 shadow-lg object-cover"
+    />
+    <span className="mt-3 text-lg font-semibold text-cyan-200">
+      Jay
+    </span>
+  </a>
+</div>
+
       </div>
     </section>
   );
