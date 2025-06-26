@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/khush/static/css/main.36c88765.css",
-    "main.js": "/khush/static/js/main.d997585e.js",
+    "main.js": "/khush/static/js/main.ebafee11.js",
     "index.html": "/khush/index.html",
     "main.36c88765.css.map": "/khush/static/css/main.36c88765.css.map",
-    "main.d997585e.js.map": "/khush/static/js/main.d997585e.js.map"
+    "main.ebafee11.js.map": "/khush/static/js/main.ebafee11.js.map"
   },
   "entrypoints": [
     "static/css/main.36c88765.css",
-    "static/js/main.d997585e.js"
+    "static/js/main.ebafee11.js"
   ]
 }
