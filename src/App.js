@@ -11,6 +11,7 @@ import Gateway2JapanMaintenance from './pages/Gateway2JapanMaintenance';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
 import './index.css';
+import { Navigate } from 'react-router-dom';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <DarkModeToggle />
         <Routes>
           <Route path="/gateway2japan-maintenance" element={<Gateway2JapanMaintenance />} />
+          <Route path="/khush" element={<Navigate to="/khush/index.html" />} />
           <Route path="/" element={
             <>
               <HeroSection />

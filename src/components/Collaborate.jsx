@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
-
-const SERVICE_ID = 'service_5r2fhzm';
-const TEMPLATE_ID = 'template_0zdy1ay';
-const USER_ID = '48Q_QVt0MhUDw7kou';
 
 const Collaborate = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -19,21 +15,42 @@ const Collaborate = () => {
     e.preventDefault();
     setSubmitted(false);
     setError(null);
+    setIsLoading(true);
+    
+    if (!form.name || !form.email || !form.message) {
+      setError('Please fill in all fields');
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          form_name: form.name,
-          form_email: form.email,
-          message: form.message,
+      console.log('Sending form data:', form);
+      const response = await fetch('http://localhost:3001/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        USER_ID
-      );
+        body: JSON.stringify(form),
+      });
+
+      console.log('Response status:', response.status);
+      console.log('Response headers:', response.headers);
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        console.log('Error data:', errorData);
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Success data:', data);
       setSubmitted(true);
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
-      setError('Failed to send. Please try again later.');
+      console.error('Error:', err);
+      setError(err.message || 'Failed to send message. Please try again later.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -57,16 +74,43 @@ const Collaborate = () => {
           Interested in working together? Fill out the form or email us at <a href="mailto:twofoldtwins.inc@gmail.com" className="text-cyan-400 underline">twofoldtwins.inc@gmail.com</a>
         </motion.p>
         <form onSubmit={handleSubmit} className="bg-white/10 border border-cyan-400/20 rounded-2xl shadow-xl p-8 backdrop-blur-md flex flex-col gap-6">
-          <input type="text" name="name" placeholder="Name" value={form.name} onChange={handleChange} required className="px-4 py-3 rounded-lg bg-black/40 text-white placeholder-gray-400 border border-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
-          <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required className="px-4 py-3 rounded-lg bg-black/40 text-white placeholder-gray-400 border border-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
-          <textarea name="message" placeholder="Message" value={form.message} onChange={handleChange} required rows={4} className="px-4 py-3 rounded-lg bg-black/40 text-white placeholder-gray-400 border border-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Name" 
+            value={form.name} 
+            onChange={handleChange} 
+            required 
+            className="px-4 py-3 rounded-lg bg-black/40 text-white placeholder-gray-400 border border-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400" 
+          />
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Email" 
+            value={form.email} 
+            onChange={handleChange} 
+            required 
+            className="px-4 py-3 rounded-lg bg-black/40 text-white placeholder-gray-400 border border-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400" 
+          />
+          <textarea 
+            name="message" 
+            placeholder="Message" 
+            value={form.message} 
+            onChange={handleChange} 
+            required 
+            rows={4} 
+            className="px-4 py-3 rounded-lg bg-black/40 text-white placeholder-gray-400 border border-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400" 
+          />
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             type="submit"
-            className="mt-2 px-8 py-3 rounded-xl bg-cyan-500 bg-opacity-80 hover:bg-cyan-400 text-black font-semibold shadow-lg transition-all duration-300 backdrop-blur-md"
+            disabled={isLoading}
+            className={`mt-2 px-8 py-3 rounded-xl bg-cyan-500 bg-opacity-80 hover:bg-cyan-400 text-black font-semibold shadow-lg transition-all duration-300 backdrop-blur-md ${
+              isLoading ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
           >
-            {submitted ? 'Thank You!' : 'Get in Touch'}
+            {isLoading ? 'Sending...' : submitted ? 'Thank You!' : 'Get in Touch'}
           </motion.button>
           {submitted && <div className="text-green-400 mt-2">Your message has been sent!</div>}
           {error && <div className="text-red-400 mt-2">{error}</div>}

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/khush/static/css/main.b295af83.css",
+    "main.js": "/khush/static/js/main.b241609e.js",
+    "index.html": "/khush/index.html",
+    "main.b295af83.css.map": "/khush/static/css/main.b295af83.css.map",
+    "main.b241609e.js.map": "/khush/static/js/main.b241609e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b295af83.css",
+    "static/js/main.b241609e.js"
+  ]
+}
