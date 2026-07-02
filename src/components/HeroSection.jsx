@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import { FaFire, FaReact, FaAngular, FaVuejs, FaNodeJs, FaBootstrap, FaSass } from 'react-icons/fa';
+import { FaReact, FaAngular, FaVuejs, FaNodeJs, FaBootstrap, FaSass } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiFirebase } from 'react-icons/si';
 
 const particlesInit = async (main) => {

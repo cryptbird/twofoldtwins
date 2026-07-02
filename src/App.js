@@ -8,6 +8,7 @@ import Collaborate from './components/Collaborate';
 import Footer from './components/Footer';
 import DarkModeToggle from './components/DarkModeToggle';
 import Gateway2JapanMaintenance from './pages/Gateway2JapanMaintenance';
+import TciLeadAnalysis from './pages/TciLeadAnalysis';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
 import './index.css';
@@ -21,6 +22,7 @@ function App() {
         <DarkModeToggle />
         <Routes>
           <Route path="/gateway2japan-maintenance" element={<Gateway2JapanMaintenance />} />
+          <Route path="/tci-lead" element={<TciLeadAnalysis />} />
           <Route path="/khush" element={<Navigate to="/khush/index.html" />} />
           <Route path="/" element={
             <>

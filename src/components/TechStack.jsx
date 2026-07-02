@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaAndroid, FaGoogle, FaCloud, FaMapMarkedAlt } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaAndroid, FaGoogle } from 'react-icons/fa';
 import { SiFlutter, SiFirebase, SiDart, SiJavascript, SiOpenstreetmap } from 'react-icons/si';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
