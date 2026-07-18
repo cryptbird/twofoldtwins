@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Journey of 35 Years — Jitendra Bhardwaj</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400;500&family=Great+Vibes&family=Parisienne&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fff9ef;
+    --brass:#b9702f;
+    --brass-glow:#f0b45a;
+    --signal:#e5642a;
+    --ink:#3a2415;
+    /* sunset sky */
+    --sky-1:#2a3c66;   /* high dusk blue */
+    --sky-2:#6d5a8f;   /* violet */
+    --sky-3:#c9678f;   /* rose */
+    --sky-4:#f0955a;   /* orange */
+    --sky-5:#ffd694;   /* gold horizon */
+    --cloud-warm:#ffe6c4;
+    --cloud-pink:#ffc9d6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--sky-3);
+    color:var(--ink);
+    font-family:'Cormorant Garamond',serif;
+    overflow-x:hidden;
+  }
+
+  /* ================= SUNSET SKY (fixed) ================= */
+  .sky{ position:fixed; inset:0; z-index:0; overflow:hidden;
+    background:linear-gradient(180deg,
+      var(--sky-1) 0%, var(--sky-2) 30%, var(--sky-3) 55%,
+      var(--sky-4) 78%, var(--sky-5) 100%);
+  }
+  /* sun glow near horizon */
+  .sun{ position:absolute; left:50%; bottom:6%; transform:translateX(-50%);
+    width:60vw; height:60vw; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,240,200,.95) 0%, rgba(255,201,120,.5) 30%, rgba(255,160,90,0) 66%);
+    filter:blur(4px); animation:sunPulse 12s ease-in-out infinite;}
+  @keyframes sunPulse{50%{transform:translateX(-50%) scale(1.05);opacity:.9}}
+
+  .cloud{ position:absolute; border-radius:50%; filter:blur(3px); will-change:transform;}
+  /* warm-lit clouds, tinted by the sunset */
+  .cl-a{width:66vw;height:66vw;left:-14vw;top:6vh;
+    background:radial-gradient(circle at 50% 45%, var(--cloud-warm) 0%, rgba(255,230,196,.6) 42%, rgba(255,230,196,0) 72%);
+    animation:drift1 30s ease-in-out infinite;}
+  .cl-b{width:52vw;height:52vw;right:-10vw;top:30vh;
+    background:radial-gradient(circle at 50% 45%, var(--cloud-pink) 0%, rgba(255,201,214,.5) 42%, rgba(255,201,214,0) 72%);
+    animation:drift2 36s ease-in-out infinite;}
+  .cl-c{width:78vw;height:78vw;left:8vw;bottom:-24vh;
+    background:radial-gradient(circle at 50% 45%, #fff2dc 0%, rgba(255,242,220,.55) 42%, rgba(255,242,220,0) 72%);
+    animation:drift1 44s ease-in-out infinite reverse;}
+  .cl-d{width:44vw;height:44vw;right:16vw;top:-12vh;
+    background:radial-gradient(circle at 50% 45%, #ffd9b0 0%, rgba(255,217,176,.5) 42%, rgba(255,217,176,0) 72%);
+    animation:drift2 28s ease-in-out infinite reverse;}
+  .cl-e{width:58vw;height:58vw;left:30vw;top:40vh;
+    background:radial-gradient(circle at 50% 45%, #ffe0c0 0%, rgba(255,224,192,.45) 42%, rgba(255,224,192,0) 72%);
+    animation:drift1 50s ease-in-out infinite;}
+  @keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(4vw,-3vh) scale(1.06)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-5vw,4vh) scale(1.08)}}
+
+  /* ================= FLY-THROUGH ================= */
+  /* Keep this wrapper out of its own stacking context so the opening text
+     can sit above the darkening overlay, just like the finale text. */
+  .flight{ position:relative; height:640vh; }
+  .viewport{ position:fixed; inset:0; z-index:2; perspective:1100px;
+    perspective-origin:50% 46%; overflow:hidden; pointer-events:none;}
+  .deck{ position:absolute; inset:0; transform-style:preserve-3d;}
+  .haze{ position:absolute; inset:0; z-index:3; pointer-events:none;
+    background:radial-gradient(ellipse at 50% 52%, rgba(255,220,180,0) 28%, rgba(255,205,160,.5) 76%, rgba(255,190,140,.85) 100%);}
+
+  .card{ position:absolute; top:50%; left:50%;
+    width:340px; height:400px; margin:-200px 0 0 -170px;
+    transform-style:preserve-3d; will-change:transform,opacity;}
+  .card .mat{ position:absolute; inset:0; background:var(--paper);
+    padding:16px 16px 52px; border-radius:3px;
+    box-shadow:0 30px 70px rgba(120,60,40,.4), 0 6px 18px rgba(0,0,0,.2);}
+  .card .mat::after{ content:attr(data-cap); position:absolute; left:0; right:0; bottom:14px;
+    text-align:center; font-family:'Parisienne',cursive; font-size:1.05rem; letter-spacing:.02em;
+    color:#a56a3a; text-transform:none;}
+  .card .slot{ width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg,#f0dcbc,#e0c396); color:#6b573c;
+    font-family:'DM Mono',monospace; font-size:.72rem; letter-spacing:.14em;
+    text-align:center; line-height:1.8; border:1px solid rgba(107,87,60,.2);}
+  .card img{ width:100%; height:100%; object-fit:cover; display:block;}
+  .card .era{ position:absolute; top:-34px; left:50%; transform:translateX(-50%);
+    font-family:'DM Mono',monospace; font-size:.58rem; letter-spacing:.4em;
+    text-transform:uppercase; color:#fff2df; white-space:nowrap;
+    text-shadow:0 1px 8px rgba(120,50,30,.6);}
+
+  .intro{ position:fixed; inset:0; z-index:6; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; pointer-events:none;
+    transition:opacity .6s;}
+  .intro h2{ font-family:'Great Vibes',cursive; font-weight:400; font-size:clamp(3rem,10vw,6rem);
+    color:#fff8ee; line-height:1;
+    text-shadow:0 2px 4px rgba(30,12,6,.9), 0 6px 30px rgba(30,12,6,.85), 0 0 60px rgba(20,8,4,.7);}
+  .intro p{ font-family:'DM Mono',monospace; letter-spacing:.4em; text-transform:uppercase;
+    font-size:.72rem; color:#ffe9cf; margin-top:1rem;
+    text-shadow:0 2px 4px rgba(30,12,6,.9), 0 3px 16px rgba(30,12,6,.8);}
+  .cue{ position:fixed; bottom:22px; left:0;right:0; text-align:center; z-index:5;
+    font-family:'DM Mono',monospace; font-size:.6rem; letter-spacing:.3em; text-transform:uppercase;
+    color:#fff2df; text-shadow:0 2px 8px rgba(120,50,30,.6); animation:bob 2s ease-in-out infinite;}
+  @keyframes bob{50%{transform:translateY(6px);opacity:.5}}
+
+  /* ================= INVITE FINALE (same sunset, cursive text) ================= */
+  .finale{ position:relative; z-index:6; min-height:100vh;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    padding:12vh 6vw; }
+
+  /* dimmer: a full-screen dark wash that fades IN as the invite arrives,
+     darkening the sunset so the cursive text pops. Driven by scroll. */
+  #dimmer{ position:fixed; inset:0; z-index:5; pointer-events:none; opacity:0;
+    background:radial-gradient(ellipse at 50% 45%,
+      rgba(16,8,4,.82) 0%, rgba(16,8,4,.8) 55%, rgba(12,6,3,.86) 100%);}
+  .invite{ max-width:760px; color:#fff8ee; }
+  .invite .flourish{ font-family:'DM Mono',monospace; letter-spacing:.42em; text-transform:uppercase;
+    font-size:.66rem; color:#ffe4c2; margin-bottom:1.6rem; text-shadow:0 2px 12px rgba(90,40,25,.6);}
+  .invite .lead{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.3rem,3.4vw,1.9rem);
+    color:#fff2e0; line-height:1.5; text-shadow:0 2px 16px rgba(90,40,25,.55);}
+  .invite .service{ display:block; font-family:'Great Vibes',cursive;
+    font-size:clamp(2.6rem,8vw,4.6rem); color:#fff9f0; line-height:1.05; margin:.4rem 0 .1rem;
+    text-shadow:0 4px 26px rgba(90,40,25,.6);}
+  .invite .name{ display:block; font-family:'Great Vibes',cursive;
+    font-size:clamp(3.4rem,12vw,7rem); color:#ffe9c9; line-height:1; margin:.2rem 0 1.4rem;
+    text-shadow:0 6px 34px rgba(90,40,25,.7);}
+  .invite .rule{ width:180px; height:1px; margin:1.6rem auto;
+    background:linear-gradient(90deg,transparent,rgba(255,228,194,.9),transparent);}
+  .invite .where{ font-family:'Parisienne',cursive; font-size:clamp(2rem,5.5vw,3.2rem);
+    color:#fff6ea; line-height:1.2; text-shadow:0 3px 20px rgba(90,40,25,.6);}
+  .invite .when{ font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,3.6vw,2rem);
+    color:#fff2e0; letter-spacing:.04em; margin-top:.9rem; text-shadow:0 2px 16px rgba(90,40,25,.55);}
+  .invite .when b{ font-weight:500; color:#ffe4c2;}
+  .invite .signoff{ margin-top:2.6rem; font-family:'DM Mono',monospace; letter-spacing:.34em;
+    text-transform:uppercase; font-size:.62rem; color:#ffe4c2; text-shadow:0 2px 12px rgba(90,40,25,.6);}
+
+  @media (prefers-reduced-motion:reduce){ .card{transition:none!important} }
+</style>
+</head>
+<body>
+
+<div class="sky">
+  <div class="sun"></div>
+  <div class="cloud cl-a"></div>
+  <div class="cloud cl-b"></div>
+  <div class="cloud cl-c"></div>
+  <div class="cloud cl-d"></div>
+  <div class="cloud cl-e"></div>
+</div>
+
+<div class="flight">
+  <div class="viewport">
+    <div class="deck" id="deck">
+      <!-- EARLY YEARS -->
+      <div class="card"><span class="era">The Early Years</span>
+        <div class="mat" data-cap="Where it began"><div class="slot"><img src="/papa/1.jpg" alt=""></div></div></div>
+      <div class="card"><span class="era">The Early Years</span>
+        <div class="mat" data-cap="First posting"><div class="slot"><img src="/papa/2.jpg" alt=""></div></div></div>
+      <div class="card"><span class="era">The Early Years</span>
+        <div class="mat" data-cap="Young &amp; bold"><div class="slot"><img src="/papa/3.jpg" alt=""></div></div></div>
+      <!-- WORKING YEARS -->
+      <div class="card"><span class="era">The Working Years</span>
+        <div class="mat" data-cap="Full steam ahead"><div class="slot"><img src="/papa/4.png" alt=""></div></div></div>
+      <div class="card"><span class="era">The Working Years</span>
+        <div class="mat" data-cap="The manager"><div class="slot"><img src="/papa/10.jpeg" alt=""></div></div></div>
+      <div class="card"><span class="era">The Working Years</span>
+        <div class="mat" data-cap="Milestones"><div class="slot"><img src="/papa/6.jpg" alt=""></div></div></div>
+      <!-- TODAY -->
+      <div class="card"><span class="era">Today</span>
+        <div class="mat" data-cap="These days"><div class="slot"><img src="/papa/7.jpg" alt=""></div></div></div>
+      <div class="card"><span class="era">Today</span>
+        <div class="mat" data-cap="Well earned"><div class="slot"><img src="/papa/5.jpg" alt=""></div></div></div>
+    </div>
+    
+    <div class="haze"></div>
+  </div>
+  <div class="intro" id="intro">
+    <h2>A Journey of 35 Years</h2>
+    <p>All aboard · one last time</p>
+  </div>
+</div>
+
+<div class="cue" id="cue">scroll to fly through ↓</div>
+
+<!-- darkening overlay for the finale -->
+<div id="dimmer"></div>
+
+<!-- INVITE FINALE -->
+<section class="finale" style="z-index:7">
+  <div class="invite">
+    <div class="flourish">You are cordially invited</div>
+    <p class="lead">to celebrate a tremendous</p>
+    <span class="service">Service of 35 Years</span>
+    <p class="lead">of</p>
+    <span class="name">Jitendra Bhardwaj</span>
+    <div class="rule"></div>
+    <p class="where">Karni Palace, Kota</p>
+    <p class="when"><b>26<sup>th</sup> September 2026</b> · 7:30 in the evening</p>
+    <div class="signoff">Your presence would honour the journey</div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const cards = Array.from(document.querySelectorAll('.card'));
+  const flight = document.querySelector('.flight');
+  const intro  = document.getElementById('intro');
+  const cue    = document.getElementById('cue');
+  const dimmer = document.getElementById('dimmer');
+  const finale = document.querySelector('.finale');
+  const SPACING = 700, CAM_LEAD = 260;
+
+  function frame(){
+    const rect = flight.getBoundingClientRect();
+    const scrollable = flight.offsetHeight - window.innerHeight;
+    let p = Math.min(1, Math.max(0, -rect.top / scrollable));
+    const camZ = p * cards.length * SPACING;
+
+    cards.forEach((card,i)=>{
+      const tz = (i*SPACING) - camZ;
+      let op = 1;
+      if (tz < -900) op = Math.max(0,(tz+1400)/500);
+      if (tz > CAM_LEAD) op = Math.max(0,1-(tz-CAM_LEAD)/300);
+      const off = (i%2?1:-1)*60*Math.min(1,Math.max(0,(tz+900)/900));
+      const rot = (i%2?-1:1)*4;
+      card.style.transform = `translateX(${off}px) translateZ(${tz}px) rotateZ(${rot}deg)`;
+      card.style.opacity = op;
+      card.style.display = (op<=0 && tz>CAM_LEAD) ? 'none':'block';
+      card.style.zIndex = Math.round(1000+tz);
+    });
+    const introFade = Math.max(0,1-p*6);
+    intro.style.opacity = introFade;
+    cue.style.opacity   = Math.max(0,1-p*4);
+
+    // Darkening comes from two moments and we take whichever is stronger:
+    // 1) the opening title — begin lifting immediately on the first scroll
+    const introDark = Math.max(0, 1 - p*12);
+    // 2) the invite finale — fades back in as it rises into view
+    const fRect = finale.getBoundingClientRect();
+    const vh = window.innerHeight;
+    let finaleDark = Math.min(1, Math.max(0, (vh - fRect.top) / vh));
+    dimmer.style.opacity = Math.max(introDark, finaleDark);
+
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

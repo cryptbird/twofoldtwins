@@ -24,6 +24,7 @@ function App() {
           <Route path="/gateway2japan-maintenance" element={<Gateway2JapanMaintenance />} />
           <Route path="/tci-lead" element={<TciLeadAnalysis />} />
           <Route path="/khush" element={<Navigate to="/khush/index.html" />} />
+          <Route path="/papaVideo" element={<Navigate to="/papaVideo/index.html" />} />
           <Route path="/" element={
             <>
               <HeroSection />
