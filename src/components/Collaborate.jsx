@@ -24,26 +24,22 @@ const Collaborate = () => {
     }
 
     try {
-      console.log('Sending form data:', form);
-      const response = await fetch('http://localhost:3001/api/send-email', {
+      // Same-origin serverless function (see /api/send-email.js). Never
+      // hardcode a host here: a localhost URL breaks the deployed site.
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, source: 'twofoldtwins' }),
       });
 
-      console.log('Response status:', response.status);
-      console.log('Response headers:', response.headers);
+      const data = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        console.log('Error data:', errorData);
-        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+        throw new Error(data.message || `HTTP error! status: ${response.status}`);
       }
 
-      const data = await response.json();
-      console.log('Success data:', data);
       setSubmitted(true);
       setForm({ name: '', email: '', message: '' });
     } catch (err) {

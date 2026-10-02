@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/khush/static/css/main.36c88765.css",
-    "main.js": "/khush/static/js/main.ebafee11.js",
+    "main.css": "/khush/static/css/main.58b4295a.css",
+    "main.js": "/khush/static/js/main.36ace9fe.js",
     "index.html": "/khush/index.html",
-    "main.36c88765.css.map": "/khush/static/css/main.36c88765.css.map",
-    "main.ebafee11.js.map": "/khush/static/js/main.ebafee11.js.map"
+    "main.58b4295a.css.map": "/khush/static/css/main.58b4295a.css.map",
+    "main.36ace9fe.js.map": "/khush/static/js/main.36ace9fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.36c88765.css",
-    "static/js/main.ebafee11.js"
+    "static/css/main.58b4295a.css",
+    "static/js/main.36ace9fe.js"
   ]
 }
